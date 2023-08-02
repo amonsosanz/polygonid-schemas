@@ -3,17 +3,17 @@
 Import the schemas in this order into a clean DB:
 
 - Diploma Credential
-  - url
+  - [Raw URL](https://raw.githubusercontent.com/amonsosanz/polygonid-schemas/main/schemas/DiplomaCredential.json)
   - Reputation
 - Vaccination Certificate
-  - url
+  - [Raw URL](https://raw.githubusercontent.com/amonsosanz/polygonid-schemas/main/schemas/VaccinationCertificate.json)
   - Compliance
 - Know Your Customer
-  - url
+  - [Raw URL](https://raw.githubusercontent.com/amonsosanz/polygonid-schemas/main/schemas/KYC.json)
   - KYC
 - Driving Medical Certificate
-  - url
+  - [Raw URL](https://raw.githubusercontent.com/amonsosanz/polygonid-schemas/main/schemas/DrivingMedicalCertificate.json)
   - Compliance
 - BirthCertificate
-  - url
+  - [Raw URL](https://raw.githubusercontent.com/amonsosanz/polygonid-schemas/main/schemas/BirthCertificate.json)
   - KYC
