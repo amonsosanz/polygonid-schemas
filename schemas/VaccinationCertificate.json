@@ -2,9 +2,9 @@
   "$metadata": {
     "type": "VaccinationCertificate",
     "uris": {
-      "jsonLdContext": "ipfs://QmP9g9Nw117ikMYAKY3yd8YgasW1TB8MoiazzVSAp2K3Jr"
+      "jsonLdContext": "ipfs://Qme2Jxf1NsC5jnq6RUSna9doHGMGeksYSKbMRW8BkNa4rE"
     },
-    "version": "1.0"
+    "version": "1.1"
   },
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Certificate for vaccination against COVID-19 or any other disease. Based on W3C draft: https://w3c-ccg.github.io/vaccination-vocab/",
@@ -45,6 +45,12 @@
       "description": "Stores the data of the credential",
       "title": "Credential subject",
       "properties": {
+        "vaccinationDate": {
+          "description": "The date the subject received the vaccine",
+          "title": "Vaccination date",
+          "format": "date-time",
+          "type": "string"
+        },
         "batchNumber": {
           "description": "The number of the batch",
           "examples": [1234567890],
@@ -173,6 +179,7 @@
         }
       },
       "required": [
+        "vaccinationDate",
         "batchNumber",
         "countryOfVaccination",
         "administeringCentre"
