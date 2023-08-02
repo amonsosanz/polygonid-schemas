@@ -1,0 +1,206 @@
+{
+  "$metadata": {
+    "type": "VaccinationCertificate",
+    "uris": {
+      "jsonLdContext": "ipfs://QmP9g9Nw117ikMYAKY3yd8YgasW1TB8MoiazzVSAp2K3Jr"
+    },
+    "version": "1.0"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Certificate for vaccination against COVID-19 or any other disease. Based on W3C draft: https://w3c-ccg.github.io/vaccination-vocab/",
+  "title": "Vaccination Certificate",
+  "properties": {
+    "@context": {
+      "type": ["string", "array", "object"]
+    },
+    "expirationDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "issuanceDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "issuer": {
+      "type": ["string", "object"],
+      "format": "uri",
+      "properties": {
+        "id": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": ["id"]
+    },
+    "type": {
+      "type": ["string", "array"],
+      "items": {
+        "type": "string"
+      }
+    },
+    "credentialSubject": {
+      "description": "Stores the data of the credential",
+      "title": "Credential subject",
+      "properties": {
+        "batchNumber": {
+          "description": "The number of the batch",
+          "examples": [1234567890],
+          "title": "Batch Number",
+          "type": "integer"
+        },
+        "countryOfVaccination": {
+          "description": "The country where the vaccine was administered to the subject",
+          "examples": ["United States of America"],
+          "title": "Country of Vaccination",
+          "type": "string"
+        },
+        "id": {
+          "description": "Stores the DID of the subject that owns the credential",
+          "title": "Credential subject ID",
+          "format": "uri",
+          "type": "string"
+        },
+        "administeringCentre": {
+          "description": "The center where the vaccine was administered to the subject",
+          "title": "Administering Centre",
+          "properties": {
+            "address": {
+              "description": "The address where the center is located",
+              "examples": ["123 Main Street"],
+              "title": "Address",
+              "type": "string"
+            },
+            "centerId": {
+              "description": "The DID of the center",
+              "examples": [
+                "did:polygonid:polygon:mumbai:2qDRHjzNt3kHB2kad3c7urPs9YifCeRdxedCNnkJ6X"
+              ],
+              "title": "ID",
+              "format": "uri",
+              "type": "string"
+            },
+            "name": {
+              "description": "The name of the center",
+              "examples": ["Vaccination Center"],
+              "title": "Name",
+              "type": "string"
+            },
+            "url": {
+              "description": "The URL of the center",
+              "examples": ["https://example.com"],
+              "title": "URL",
+              "format": "uri",
+              "type": "string"
+            }
+          },
+          "required": ["name"],
+          "type": "object"
+        },
+        "recipient": {
+          "description": "The recipient of the vaccine",
+          "title": "Recipient",
+          "properties": {
+            "birthDate": {
+              "description": "The date of birth of the recipient",
+              "examples": ["1990-01-01T00:00:00Z"],
+              "title": "Birth Date",
+              "format": "date-time",
+              "type": "string"
+            },
+            "familyName": {
+              "description": "The family name of the recipient",
+              "examples": ["Doe"],
+              "title": "Family Name",
+              "type": "string"
+            },
+            "gender": {
+              "description": "The gender of the recipient",
+              "examples": ["Female"],
+              "title": "Gender",
+              "type": "string"
+            },
+            "givenName": {
+              "description": "The given name of the recipient",
+              "examples": ["John"],
+              "title": "Given Name",
+              "type": "string"
+            },
+            "photoUrl": {
+              "description": "URL of a photo of the recipient",
+              "examples": ["https://example.com/photo.jpg"],
+              "title": "Photo URL",
+              "format": "uri",
+              "type": "string"
+            }
+          },
+          "required": ["birthDate", "familyName", "givenName", "photoUrl"],
+          "type": "object"
+        },
+        "vaccine": {
+          "description": "The vaccine administered to the subject",
+          "title": "Vaccine",
+          "properties": {
+            "atcCode": {
+              "description": "The ATC code of the vaccine: https://en.wikipedia.org/wiki/ATC_code_J07",
+              "examples": ["J07BX03"],
+              "title": "ATC Code",
+              "type": "string"
+            },
+            "disease": {
+              "description": "The disease the vaccine is for",
+              "examples": ["COVID-19"],
+              "title": "Disease",
+              "type": "string"
+            },
+            "marketingAuthorizationHolder": {
+              "description": "e.g. Moderna Biotech",
+              "examples": ["Moderna Biotech"],
+              "title": "Marketing Authorization Holder",
+              "type": "string"
+            },
+            "medicinalProductName": {
+              "description": "e.g. COVID-19 Vaccine Moderna",
+              "examples": ["COVID-19 Vaccine Moderna"],
+              "title": "Medicinal Product Name",
+              "type": "string"
+            }
+          },
+          "required": ["atcCode", "disease", "medicinalProductName"],
+          "type": "object"
+        }
+      },
+      "required": [
+        "batchNumber",
+        "countryOfVaccination",
+        "administeringCentre"
+      ],
+      "type": "object"
+    },
+    "credentialSchema": {
+      "properties": {
+        "id": {
+          "format": "uri",
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "type"],
+      "type": "object"
+    }
+  },
+  "required": [
+    "@context",
+    "id",
+    "issuanceDate",
+    "issuer",
+    "type",
+    "credentialSubject",
+    "credentialSchema"
+  ],
+  "type": "object"
+}
