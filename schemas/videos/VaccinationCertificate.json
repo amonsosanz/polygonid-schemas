@@ -2,7 +2,7 @@
   "$metadata": {
     "type": "VaccinationCertificate",
     "uris": {
-      "jsonLdContext": "ipfs://Qme2Jxf1NsC5jnq6RUSna9doHGMGeksYSKbMRW8BkNa4rE"
+      "jsonLdContext": "https://raw.githubusercontent.com/amonsosanz/polygonid-schemas/main/schemas/videos/VaccinationCertificate.jsonld"
     },
     "version": "1.1"
   },
@@ -45,11 +45,10 @@
       "description": "Stores the data of the credential",
       "title": "Credential subject",
       "properties": {
-        "vaccinationDate": {
-          "description": "The date the subject received the vaccine",
-          "title": "Vaccination date",
-          "format": "date-time",
-          "type": "string"
+        "double": {
+          "description": "double",
+          "title": "Double",
+          "type": "number"
         },
         "batchNumber": {
           "description": "The number of the batch",
@@ -179,7 +178,7 @@
         }
       },
       "required": [
-        "vaccinationDate",
+        "double",
         "batchNumber",
         "countryOfVaccination",
         "administeringCentre"
