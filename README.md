@@ -17,3 +17,8 @@ Import the schemas in this order into a clean DB:
 - BirthCertificate
   - [Raw URL](https://raw.githubusercontent.com/amonsosanz/polygonid-schemas/main/schemas/videos/BirthCertificate.json)
   - KYC
+
+# Other schemas
+
+- NonMerklized
+  - [Raw URL](https://raw.githubusercontent.com/amonsosanz/polygonid-schemas/main/schemas/NonMerklized.json)

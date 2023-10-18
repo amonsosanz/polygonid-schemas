@@ -1,0 +1,36 @@
+{
+  "@context": [
+    {
+      "@protected": true,
+      "@version": 1.1,
+      "id": "@id",
+      "type": "@type",
+      "NonMerklized": {
+        "@context": {
+          "@propagate": true,
+          "@protected": true,
+          "polygon-vocab": "urn:uuid:1589a959-ff20-4856-895b-21e9358e9bfb#",
+          "iden3_serialization": "iden3:v1:slotIndexA=one&slotIndexB=two&slotValueA=three&slotValueB=four",
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "one": {
+            "@id": "polygon-vocab:one",
+            "@type": "xsd:string"
+          },
+          "two": {
+            "@id": "polygon-vocab:two",
+            "@type": "xsd:string"
+          },
+          "three": {
+            "@id": "polygon-vocab:three",
+            "@type": "xsd:string"
+          },
+          "four": {
+            "@id": "polygon-vocab:four",
+            "@type": "xsd:string"
+          }
+        },
+        "@id": "urn:uuid:02873876-83db-4fa0-82bc-fcbaaa924727"
+      }
+    }
+  ]
+}
